@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yali IT - Contact page</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+         <a class="logo" href="index.html">
+        <img src="assets/canvalogo.png" srcset="assets/canvalogo.png 1x, assets/canvalogo@2x.png 2x" sizes="(max-width: 720px) 36px, 44px" alt="YALI IT logo" class="logo-img logo-img--large">
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="button">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section style="padding-bottom:0;">
+      <h1 style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;letter-spacing:-1px;">Contact</h1>
+      <p style="text-align:center;max-width:700px;margin:0 auto 2.5em auto;color:var(--muted);font-size:1.15rem;">Reach out for a quote or to discuss your IT needs.</p>
+    </section>
+    <section class="container" style="padding-top:0;">
+      <article class="card">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/malkhalidi@yaliit.com" method="POST">
+          <label>Name<input type="text" name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Company<input type="text" name="company"></label>
+          <label>Message<textarea name="message"></textarea></label>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <!--
+        <form id="contactForm" class="contact-form" onsubmit="return submitForm(event)">
+          <label>Name<input type="text" id="name" required></label>
+          <label>Email<input type="email" id="email" required></label>
+          <label>Company<input type="text" id="company"></label>
+          <label>Message<textarea id="message"></textarea></label>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <div id="formResponse" class="form-response" style="display:none;"></div>
+        -->
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 YALI IT - Managed IT & Cybersecurity</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

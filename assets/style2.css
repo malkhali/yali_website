@@ -1,0 +1,72 @@
+
+/* Simple modern stylesheet for */
+:root{
+  --accent:#0066ff;
+  --bg:#0f1724;
+  --muted:#94a3b8;
+  --surface:#ffffff;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:#0b1220;background:#f8fafc;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.site-header{background:white;border-bottom:1px solid #eef2f7}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:#0b1220;text-decoration:none;font-size:20px}
+.logo .dot{color:var(--accent);font-weight:800;margin-left:4px}
+.nav a{margin-left:18px;color:#0b1220;text-decoration:none}
+.nav a.button{background:var(--accent);color:white;padding:8px 12px;border-radius:6px}
+.hero{padding:60px 0;background:linear-gradient(180deg,#eef2ff,#ffffff);border-bottom:1px solid #eef2f7;text-align:left}
+.hero h1{font-size:34px;margin:0 0 8px;color:#07203a}
+.hero p{color:var(--muted);max-width:680px}
+.cta-row{margin-top:18px}
+.btn{display:inline-block;background:var(--accent);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;margin-right:10px}
+.btn-outline{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;     /* put text on top, image below */
+  align-items: flex-start;    /* align left */
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;             /* adjust to match your theme */
+  text-decoration: none;
+}
+
+.logo-text .dot {
+  color: #4B8BFF;             /* accent color for "IT" */
+}
+
+.logo-img {
+  width: 60px;                /* make it smaller */
+  height: auto;
+  margin-top: 4px;            /* spacing between text & image */
+  border-radius: 6px;         /* optional: slight rounding */
+}
+
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:40px 0}
+.features article{background:white;padding:20px;border-radius:8px;box-shadow:0 4px 18px rgba(11,18,32,0.05)}
+
+.about-cta{background:#07203a;color:white;padding:36px 0;margin-top:10px}
+.about-cta h2{margin:0;font-size:22px}
+.site-footer{background:#fff;border-top:1px solid #eef2f7;padding:18px 0;margin-top:24px}
+.site-footer p{margin:0;color:var(--muted)}
+
+.container h1{margin-top:24px}
+
+.service-card{background:white;margin:18px 0;padding:20px;border-radius:8px;box-shadow:0 4px 18px rgba(11,18,32,0.04)}
+
+.contact-form{max-width:600px}
+.contact-form label{display:block;margin-bottom:12px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border:1px solid #e6eef6;border-radius:6px}
+.form-response{background:#e6fffb;border:1px solid #c9fff2;padding:12px;border-radius:6px;margin-top:12px;color:#064e3b}
+@media(max-width:800px){.features{grid-template-columns:1fr}.site-header .container{padding:12px}}
+
+
+
+
+
+
