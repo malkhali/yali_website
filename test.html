@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Test Page — YALI IT (Experimental)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Google Maps iframe version -->
+  <style>
+    .sandbox { padding: 60px 20px; text-align: center; }
+    .sandbox .box { background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); padding: 24px; border-radius:12px; display:inline-block; min-width:320px; }
+    .small { font-size:0.9rem; color:var(--muted); }
+    /* Leaflet map container fallback size */
+    #leafletMap { width:100%; height:100%; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="assets/canvalogo.png" srcset="assets/canvalogo.png 1x, assets/canvalogo@2x.png 2x" sizes="(max-width: 720px) 36px, 44px" alt="YALI IT logo" class="logo-img">
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="button">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="sandbox">
+      <div class="box">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <h2 style="margin:0;">Experimental Test Page</h2>
+          <button id="themeToggle" class="btn" style="padding:8px 18px;font-size:1rem;line-height:1.2;min-width:110px;">🌙 Dark Mode</button>
+        </div>
+        <p class="small">Use this page to prototype HTML/CSS/JS without touching the live pages.</p>
+        <p><button id="testBtn" class="btn">Run test action</button></p>
+        <pre id="output" style="text-align:left;max-width:640px;margin:12px auto 0 auto;background:#071023;padding:12px;border-radius:8px;color:#9fb6d8;">Ready.</pre>
+
+        <!-- QR Code Generator -->
+        <div style="margin:32px 0 18px 0;padding:18px 0 0 0;border-top:1px solid rgba(255,255,255,0.07);">
+          <label for="qrInput" style="font-weight:600;">QR Code Generator</label>
+          <div style="display:flex;gap:10px;margin:10px 0 18px 0;">
+            <input id="qrInput" type="text" placeholder="Enter URL or text" style="flex:1;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--light);font-size:1rem;" />
+            <button id="qrBtn" class="btn" style="padding:10px 18px;">Generate QR</button>
+          </div>
+          <div id="qrCode" style="margin-top:10px;"></div>
+        </div>
+
+         <div style="margin-top:18px;text-align:left;max-width:640px;margin-left:auto;margin-right:auto;">
+           <label style="display:block;margin-bottom:6px;color:var(--muted);">Map (enter GPS coordinates)</label>
+           <div style="display:flex;gap:8px;margin-bottom:8px;">
+             <input id="latInput" placeholder="Latitude" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--light);" value="24.7136" />
+             <input id="lngInput" placeholder="Longitude" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--light);" value="46.6753" />
+           </div>
+           <div style="display:flex;gap:8px;margin-bottom:12px;">
+             <button id="updateMap" class="btn" style="padding:10px 16px;">Update Map</button>
+           </div>
+           <div class="map-container">
+             <iframe id="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.96496429577!2d46.67529531500144!3d24.71355198411659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f038c7e6b6b1d%3A0x8e3b0e0b0b0b0b0b!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1640000000000!5m2!1sen!2ssa" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p class="small">Test page — not linked from site navigation (unless you do it manually).</p></div>
+  </footer>
+
+
+
+
+
+
+  <script src="assets/qrcode.min.js"></script>
+  <script src="assets/script.js"></script>
+      // QR Code Generator
+      const qrInput = document.getElementById('qrInput');
+      const qrBtn = document.getElementById('qrBtn');
+      const qrCodeDiv = document.getElementById('qrCode');
+      let qrCodeObj = null;
+      qrBtn.addEventListener('click', function() {
+        const val = qrInput.value.trim();
+        qrCodeDiv.innerHTML = '';
+        if (!val) return;
+        qrCodeObj = new QRCode(qrCodeDiv, {
+          text: val,
+          width: 160,
+          height: 160,
+          colorDark: '#22223b',
+          colorLight: '#fff',
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      });
+  <script>
+    // Restore original test button JS
+    document.getElementById('testBtn').addEventListener('click', function (){
+      const out = document.getElementById('output');
+      out.textContent = 'Test clicked at ' + new Date().toLocaleString();
+    });
+
+    // Map controls for Google Maps iframe
+    const latInput = document.getElementById('latInput');
+    const lngInput = document.getElementById('lngInput');
+    const updateBtn = document.getElementById('updateMap');
+    const gmap = document.getElementById('gmap');
+
+    function updateMap() {
+      const lat = parseFloat(latInput.value);
+      const lng = parseFloat(lngInput.value);
+      if (isNaN(lat) || isNaN(lng)) return;
+      // Google Maps embed URL for coordinates
+      const url = `https://www.google.com/maps?q=${lat},${lng}&hl=en&z=14&output=embed`;
+      gmap.src = url;
+      const out = document.getElementById('output');
+      out.textContent = `Map updated to ${lat}, ${lng} at ${new Date().toLocaleString()}`;
+    }
+    updateBtn.addEventListener('click', updateMap);
+
+    // Dark/Light mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    let darkMode = true;
+    function setTheme(dark) {
+      const root = document.documentElement;
+      if (dark) {
+        root.style.setProperty('--primary', '#4f46e5');
+        root.style.setProperty('--secondary', '#06b6d4');
+        root.style.setProperty('--dark', '#0f172a');
+        root.style.setProperty('--light', '#f8fafc');
+        root.style.setProperty('--muted', '#64748b');
+        root.style.setProperty('--card', '#111827');
+        root.style.setProperty('--border', '#1e293b');
+        document.body.style.background = 'linear-gradient(180deg, #020617, #020617)';
+        themeToggle.textContent = '🌙 Dark Mode';
+      } else {
+        root.style.setProperty('--primary', '#2563eb');
+        root.style.setProperty('--secondary', '#0ea5e9');
+        root.style.setProperty('--dark', '#f8fafc');
+        root.style.setProperty('--light', '#1e293b');
+        root.style.setProperty('--muted', '#64748b');
+        root.style.setProperty('--card', '#f1f5f9');
+        root.style.setProperty('--border', '#cbd5e1');
+        document.body.style.background = 'linear-gradient(180deg, #f1f5f9, #e0e7ef)';
+        themeToggle.textContent = '☀️ Light Mode';
+      }
+    }
+    setTheme(darkMode);
+    themeToggle.addEventListener('click', function() {
+      darkMode = !darkMode;
+      setTheme(darkMode);
+    });
+  </script>
+</body>
+</html>
