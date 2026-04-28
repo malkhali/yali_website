@@ -3,13 +3,87 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yali IT - Contact page</title>
+  <title>YALI IT | Contact</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 720px) {
+      .contact-wrap { grid-template-columns: 1fr; gap: 32px; }
+    }
+    .contact-info h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .contact-detail-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg { width: 18px; height: 18px; color: white; }
+    .contact-detail-text p { color: var(--muted); font-size: 0.9rem; margin-bottom: 2px; }
+    .contact-detail-text a, .contact-detail-text span {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.97rem;
+    }
+    .contact-detail-text a:hover { color: var(--secondary); }
+
+    .form-response {
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 0.97rem;
+      display: none;
+    }
+    .form-response.success {
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.3);
+      color: #34d399;
+    }
+    .form-response.error {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: #f87171;
+    }
+    button[type="submit"]:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .field { margin-bottom: 18px; }
+    textarea { min-height: 120px; resize: vertical; }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-         <a class="logo" href="index.html">
+      <a class="logo" href="index.html">
         <img src="assets/canvalogo.png" srcset="assets/canvalogo.png 1x, assets/canvalogo@2x.png 2x" sizes="(max-width: 720px) 36px, 44px" alt="YALI IT logo" class="logo-img logo-img--large">
       </a>
       <nav class="nav">
@@ -23,38 +97,131 @@
 
   <main>
     <section style="padding-bottom:0;">
-      <h1 style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;letter-spacing:-1px;">Contact</h1>
-      <p style="text-align:center;max-width:700px;margin:0 auto 2.5em auto;color:var(--muted);font-size:1.15rem;">Reach out for a quote or to discuss your IT needs.</p>
+      <h1 style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;letter-spacing:-1px;">Contact Us</h1>
+      <p style="text-align:center;max-width:600px;margin:0 auto 2.5em auto;color:var(--muted);font-size:1.1rem;">Ready to simplify your IT? Fill out the form and we'll get back to you within one business day.</p>
     </section>
+
     <section class="container" style="padding-top:0;">
-      <article class="card">
-        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mvzbbzwa" method="POST">
-          <label>Name<input type="text" name="name" required></label>
-          <label>Email<input type="email" name="email" required></label>
-          <label>Company<input type="text" name="company"></label>
-          <label>Message<textarea name="message"></textarea></label>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-        <!--
-        <form id="contactForm" class="contact-form" onsubmit="return submitForm(event)">
-          <label>Name<input type="text" id="name" required></label>
-          <label>Email<input type="email" id="email" required></label>
-          <label>Company<input type="text" id="company"></label>
-          <label>Message<textarea id="message"></textarea></label>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-        <div id="formResponse" class="form-response" style="display:none;"></div>
-        -->
-      </article>
+      <div class="contact-wrap">
+
+        <!-- Left: contact details -->
+        <div class="contact-info">
+          <h2>Get in touch</h2>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0-9.75 6.75L2.25 6.75"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <p>Email</p>
+              <a href="mailto:ContactUs@yaliit.com">ContactUs@yaliit.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <p>Response time</p>
+              <span>Within 1 business day</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <p>Services</p>
+              <span>Managed IT &amp; Cybersecurity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <article class="card">
+          <form id="contactForm">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Acme Corp">
+            </div>
+            <div class="field">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us what you need help with..." required></textarea>
+            </div>
+            <button type="submit" class="btn" style="margin-top:0;width:100%;display:block;">Send Message</button>
+          </form>
+          <div id="formResponse" class="form-response"></div>
+        </article>
+
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 YALI - Managed IT & Cybersecurity</p>
+      <p>© 2026 YALI — Managed IT & Cybersecurity</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
     </div>
   </footer>
 
-  
+  <script>
+    // ── Replace this URL after you create your API Gateway endpoint ──
+    const API_URL = 'https://d2izahg8jh.execute-api.us-east-1.amazonaws.com/contact';
+
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const btn = this.querySelector('button[type="submit"]');
+      const responseEl = document.getElementById('formResponse');
+
+      const payload = {
+        name:    document.getElementById('name').value.trim(),
+        email:   document.getElementById('email').value.trim(),
+        company: document.getElementById('company').value.trim(),
+        message: document.getElementById('message').value.trim(),
+      };
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      responseEl.style.display = 'none';
+      responseEl.className = 'form-response';
+
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          responseEl.textContent = "Thanks! We'll be in touch within one business day.";
+          responseEl.classList.add('success');
+          this.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        responseEl.textContent = 'Something went wrong. Please email us directly at ContactUs@yaliit.com';
+        responseEl.classList.add('error');
+      } finally {
+        responseEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+    });
+  </script>
 </body>
 </html>
