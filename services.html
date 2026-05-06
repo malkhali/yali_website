@@ -7,22 +7,17 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="portal-banner">
-    <a href="https://yali.syncromsp.com/portal/user_login" target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/></svg>
-      Customer Portal — Sign In
-    </a>
-  </div>
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="/index.html">
+      <a class="logo" href="index.html">
         <img src="assets/canvalogo.png" srcset="assets/canvalogo.png 1x, assets/canvalogo@2x.png 2x" sizes="(max-width: 720px) 36px, 44px" alt="YALI IT logo" class="logo-img logo-img--large">
       </a>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
-        <a href="contact.html" class="button">Contact</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal.html" class="nav-login">Client Login</a>
       </nav>
     </div>
   </header>
@@ -30,114 +25,207 @@
   <main>
     <section style="padding-bottom:0;">
       <h1 style="text-align:center;font-size:2.5rem;font-weight:800;margin-bottom:0.5em;letter-spacing:-1px;">Our Services</h1>
-      <p style="text-align:center;max-width:700px;margin:0 auto 2.5em auto;color:var(--muted);font-size:1.15rem;">We provide comprehensive IT services — from day-to-day system monitoring to advanced cybersecurity and disaster recovery. Below are our core offerings, starting with Managed IT plans.</p>
+      <p style="text-align:center;max-width:680px;margin:0 auto 2.5em auto;color:var(--muted);font-size:1.1rem;">Comprehensive IT services built for small and mid-sized businesses — from around-the-clock monitoring to advanced security and disaster recovery.</p>
     </section>
 
-    <!-- Managed IT RMM with plans (horizontal container) -->
-    <section class="container" style="padding-top:0;">
-      <div class="card" style="margin-bottom:2.5em;">
-        <h2>Managed IT</h2>
-        <p>Proactive monitoring and maintenance to keep your systems healthy and your team productive. Choose the plan that fits your environment — contact us for details and a tailored quote.</p>
-        <div class="plans horizontal-row" aria-hidden="false" style="overflow-x:auto;">
-          <div class="plan-card">
-            <div class="plan-title"><img src="assets/icons/monitoring.svg" alt="monitoring" style="width:20px;height:20px;margin-right:8px;vertical-align:middle;"> Standard</div>
-            <p>Essential monitoring and maintenance for small teams.</p>
-            <ul class="plan-features">
-              <li>24/7 basic system monitoring</li>
-              <li>Automated Windows updates</li>
-              <li>Monthly health reports</li>
-            </ul>
-            <div class="plan-cta"><a href="contact.html" class="btn">Contact Us</a></div>
-          </div>
-          <div class="plan-card plan-premium">
-            <div class="plan-title"><img src="assets/icons/monitoring.svg" alt="monitoring" style="width:20px;height:20px;margin-right:8px;vertical-align:middle;"> Premium <span class="badge-premium">Premium</span></div>
-            <p>Advanced monitoring and response for business-critical systems with priority remediation.</p>
-            <ul class="plan-features">
-              <li>Advanced 24/7 monitoring & alerting</li>
-              <li>Automated Windows & third‑party patching</li>
-              <li>Priority remote remediation</li>
-              <li>Performance tuning & capacity planning</li>
-            </ul>
-            <div class="plan-cta"><a href="contact.html" class="btn">Contact Us</a></div>
+    <section class="container" style="padding-top:0;display:grid;gap:2rem;">
+
+      <!-- 1. Monitoring -->
+      <article class="card svc-block">
+        <div class="svc-block-header">
+          <img src="assets/icons/monitoring.svg" alt="Monitoring">
+          <div>
+            <h2>24/7 Monitoring &amp; Maintenance</h2>
+            <p>We watch your systems around the clock and resolve issues before your team ever feels them. Proactive monitoring, endpoint protection, and automated maintenance — always on.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Other services (horizontal row, own container) -->
-    <section class="container" style="padding-top:0;">
-      <div class="card" style="margin-bottom:2.5em;">
-        <h2>Other Services</h2>
-        <div class="horizontal-row">
-          <div class="service-small-card">
-            <div class="service-icon security"><img src="assets/icons/security.svg" alt="security"></div>
-            <div>
-              <h4>Cybersecurity</h4>
-              <p style="margin:6px 0;color:var(--muted)">Endpoint protection, threat detection, and incident response support.</p>
-              <ul style="margin:8px 0 0 0;color:var(--muted);font-size:0.94rem;">
-                <li>Endpoint Detection & Response (EDR)</li>
-                <li>Email filtering & phishing protection</li>
-                <li>Firewall & network hardening</li>
-                <li>Security awareness training</li>
-              </ul>
-            </div>
+        <div class="svc-detail-grid">
+          <div class="svc-detail-item">
+            <h4>Continuous System Monitoring</h4>
+            <p>Real-time visibility into device health, performance, and availability — 24 hours a day, 7 days a week. We get alerted before you do.</p>
           </div>
-          <div class="service-small-card">
-            <div class="service-icon backup"><img src="assets/icons/backup.svg" alt="backup"></div>
-            <div>
-              <h4>Backup &amp; Recovery</h4>
-              <p style="margin:6px 0;color:var(--muted)">Encrypted backups, integrity checks, and fast restores when you need them.</p>
-              <ul style="margin:8px 0 0 0;color:var(--muted);font-size:0.94rem;">
-                <li>End-to-end encryption</li>
-                <li>Daily automatic verification</li>
-                <li>Point-in-time restores & recovery testing</li>
-                <li>Offsite replication options</li>
-              </ul>
-            </div>
+          <div class="svc-detail-item">
+            <h4>Endpoint Protection &amp; Threat Detection</h4>
+            <p>Advanced security deployed on every device — blocking viruses, ransomware, and suspicious behavior in real time before any damage occurs.</p>
           </div>
-          <div class="service-small-card">
-            <div class="service-icon cloud"><img src="assets/icons/cloud.svg" alt="cloud"></div>
-            <div>
-              <h4>Cloud &amp; Productivity</h4>
-              <p style="margin:6px 0;color:var(--muted)">M365 management, secure collaboration, and migrations.</p>
-              <ul style="margin:8px 0 0 0;color:var(--muted);font-size:0.94rem;">
-                <li>Microsoft 365 administration & policy</li>
-                <li>Secure file sharing & access controls</li>
-                <li>Migration planning and execution</li>
-              </ul>
-            </div>
+          <div class="svc-detail-item">
+            <h4>Automated Patching</h4>
+            <p>Windows security updates and software patches deployed on a scheduled maintenance window — no manual effort, no missed updates.</p>
           </div>
-          <div class="service-small-card">
-            <div class="service-icon consulting"><img src="assets/icons/consulting.svg" alt="consulting"></div>
-            <div>
-              <h4>Consulting &amp; Projects</h4>
-              <p style="margin:6px 0;color:var(--muted)">Security assessments, project work, and compliance planning.</p>
-              <ul style="margin:8px 0 0 0;color:var(--muted);font-size:0.94rem;">
-                <li>Security assessments & audits</li>
-                <li>Project-based migrations & upgrades</li>
-                <li>Compliance & policy guidance</li>
-              </ul>
-            </div>
+          <div class="svc-detail-item">
+            <h4>Hardware Health Monitoring</h4>
+            <p>Continuous diagnostics on drives and hardware to catch early failure signs before data is at risk or devices go down unexpectedly.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Remote Remediation</h4>
+            <p>Most issues are diagnosed and resolved remotely — no waiting for someone on-site, no disruption to your team's day.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Routine Maintenance</h4>
+            <p>Automated disk cleanup, temporary file removal, and system optimization run monthly — keeping every device fast, clean, and efficient.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Monthly Health Report</h4>
+            <p>A plain-language summary of everything we did, what we found, and the current state of every managed device — no jargon.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- CTA at end (own container) -->
-    <section class="container" style="padding-top:0;">
-      <div class="card">
+      <!-- 2. Email Security -->
+      <article class="card svc-block">
+        <div class="svc-block-header">
+          <img src="assets/icons/security.svg" alt="Security">
+          <div>
+            <h2>Email Security &amp; Protection</h2>
+            <p>Multi-layered protection for every inbox. We stop spam, phishing, impersonation attempts, and malicious content before it ever reaches your team — automatically and continuously.</p>
+          </div>
+        </div>
+        <div class="svc-detail-grid">
+          <div class="svc-detail-item">
+            <h4>Email Security &amp; Spam Filtering</h4>
+            <p>Multi-layered protection that stops spam, malicious links, and dangerous attachments from ever reaching your inbox — blocked automatically.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Impersonation &amp; Fraud Prevention</h4>
+            <p>Detects and blocks emails that impersonate your vendors, partners, or executives — protecting your team from business fraud and scams.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Link &amp; Attachment Defense</h4>
+            <p>Every link and attachment in your email is scanned in real time. Malicious content is blocked before it can load or execute.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Data Loss Prevention &amp; Encryption</h4>
+            <p>Prevents sensitive business information from leaving your organization via email. Outbound messages containing confidential data are filtered or encrypted automatically.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Email Continuity &amp; Recovery</h4>
+            <p>If your email server goes down, your team keeps working through an emergency inbox. Accidentally deleted emails can be recovered within 30 days.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Domain Protection</h4>
+            <p>Your email domain is properly configured so your messages are trusted by recipients and bad actors cannot send emails that appear to come from your organization.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Suspicious Email Alerts</h4>
+            <p>Emails flagged as potentially suspicious are tagged with visible warnings so your team knows to proceed with caution — reducing accidental clicks.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Backup -->
+      <article class="card svc-block">
+        <div class="svc-block-header">
+          <img src="assets/icons/backup.svg" alt="Backup">
+          <div>
+            <h2>Backup &amp; Disaster Recovery</h2>
+            <p>Encrypted, automatic, and verified every day. If something goes wrong — lost device, ransomware, accidental deletion — we get you back up fast with no data lost.</p>
+          </div>
+        </div>
+        <div class="svc-detail-grid">
+          <div class="svc-detail-item">
+            <h4>Encrypted Cloud Backups</h4>
+            <p>Your data is backed up automatically every night to a secure offsite location — encrypted at rest and in transit so it stays private and protected.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Daily Verification</h4>
+            <p>We verify every backup daily to confirm your data is complete and recoverable — not just backed up, but actually restorable when you need it.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Point-in-Time Restores</h4>
+            <p>Recover a single file, a folder, or an entire device to any previous point in time — whether the issue is minor or a full system failure.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Managed Recovery</h4>
+            <p>If a device is lost, stolen, or compromised, we manage the full recovery process — getting your team back online as quickly as possible.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. M365 -->
+      <article class="card svc-block">
+        <div class="svc-block-header">
+          <img src="assets/icons/cloud.svg" alt="Cloud">
+          <div>
+            <h2>Microsoft 365 Management</h2>
+            <p>We manage your entire Microsoft 365 environment so your team can work securely and productively. User setup, security configuration, app integrations — all handled.</p>
+          </div>
+        </div>
+        <div class="svc-detail-grid">
+          <div class="svc-detail-item">
+            <h4>User Account &amp; Access Management</h4>
+            <p>When someone joins or leaves, we configure or remove their access immediately — accounts, permissions, and email — so nothing lingers and nothing gets missed.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Security Configuration &amp; Hardening</h4>
+            <p>Your Microsoft 365 environment is configured with strong security policies — multi-factor authentication, access controls, and ongoing monitoring.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Email Security &amp; Domain Protection</h4>
+            <p>Your email domain is properly authenticated so your messages land in inboxes — not spam folders — and nobody can send fraudulent emails that appear to come from you.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Search &amp; Archive</h4>
+            <p>A searchable cloud archive of your organization's email — useful for compliance, records management, or simply finding an old message quickly.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Monthly Security Report</h4>
+            <p>A plain-language summary of your Microsoft 365 environment's health, threats blocked, and recommendations — no technical knowledge required to read it.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. SAT -->
+      <article class="card svc-block">
+        <div class="svc-block-header">
+          <img src="assets/icons/security.svg" alt="Training">
+          <div>
+            <h2>Security Awareness Training</h2>
+            <p>Most cyberattacks start with a human mistake. We train your team to recognize and avoid threats — turning your people into your strongest line of defense.</p>
+          </div>
+        </div>
+        <div class="svc-detail-grid">
+          <div class="svc-detail-item">
+            <h4>Simulated Phishing Tests</h4>
+            <p>Realistic fake phishing emails sent to your team to measure awareness and build the habit of spotting suspicious messages — without any real risk.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Flexible Content Formats</h4>
+            <p>Video, text, and audio options so every team member can learn in the format that works best for them — available in over 35 languages.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Progress Tracking &amp; Reporting</h4>
+            <p>Easy-to-read reports showing completion rates, phishing click rates, and how your team's awareness improves month over month.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Proven Results</h4>
+            <p>Organizations that run consistent security awareness training reduce successful phishing attacks and malware infections by up to 90%.</p>
+          </div>
+          <div class="svc-detail-item">
+            <h4>Always Up to Date</h4>
+            <p>Training content is continuously updated to reflect the latest threats — so your team is always prepared for what attackers are actually doing right now.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CTA -->
+      <article class="card">
         <h3>Ready to improve your IT posture?</h3>
-        <p>Contact us for a free assessment — we'll design a plan that fits your risk profile and budget.</p>
+        <p>Contact us for a free discovery call — we'll design a plan that fits your environment, your team, and your budget.</p>
         <div class="cta-row">
           <a href="contact.html" class="btn">Get a Quote</a>
         </div>
-      </div>
+      </article>
+
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <p>© 2026 YALI — Managed IT & Cybersecurity</p>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
     </div>
   </footer>
 
