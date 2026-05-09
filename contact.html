@@ -141,11 +141,8 @@
 
     /* ── Qty section ── */
     .qty-section {
-      display: none;
-      animation: fadeIn 0.2s ease;
+      display: block;
     }
-
-    .qty-section.visible { display: block; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(6px); }
@@ -260,9 +257,8 @@
         <article class="card" style="display:flex;flex-direction:column;gap:1.8rem;">
           <form id="quoteForm" novalidate>
 
-            <!-- Step 1: Services -->
+            <!-- Services -->
             <div class="quote-step">
-              <p class="quote-step-label">Step 1</p>
               <h2>Which services are you interested in?</h2>
               <div class="svc-picker" role="group" aria-label="Select services">
 
@@ -317,9 +313,8 @@
 
             <hr class="quote-divider">
 
-            <!-- Step 2: Team size (conditional) -->
+            <!-- Team size -->
             <div class="qty-section quote-step" id="qtySection">
-              <p class="quote-step-label">Step 2</p>
               <h2>How big is your team?</h2>
               <div class="qty-grid">
                 <div class="field" id="usersField" style="display:none;">
@@ -349,9 +344,8 @@
 
             <hr class="quote-divider">
 
-            <!-- Step 3: Contact info -->
+            <!-- Contact info -->
             <div class="quote-step">
-              <p class="quote-step-label">Step 3</p>
               <h2>Your contact details</h2>
               <div class="field-grid" style="margin-bottom:14px;">
                 <div class="field">
@@ -369,7 +363,7 @@
               </div>
               <div class="field">
                 <label for="message">Anything else we should know? <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
-                <textarea id="message" name="message" placeholder="e.g. we're currently using another IT provider and looking to switch..."></textarea>
+                <textarea id="message" name="message" placeholder="e.g. we're a 20-person office looking for ongoing IT support..."></textarea>
               </div>
             </div>
 
@@ -423,12 +417,7 @@
       document.getElementById('usersField').style.display   = needsUsers   ? 'block' : 'none';
       document.getElementById('devicesField').style.display = needsDevices ? 'block' : 'none';
 
-      const qtySection = document.getElementById('qtySection');
-      if (needsUsers || needsDevices) {
-        qtySection.classList.add('visible');
-      } else {
-        qtySection.classList.remove('visible');
-      }
+      // section always visible; individual fields show/hide based on selection
     }
 
     // ── Form submission ──
