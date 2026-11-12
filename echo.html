@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="assets/canvalogo.png" type="image/png">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Echo: AI Conversational Surveys | YALI IT</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .echo-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.15);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+    .echo-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 820px) {
+      .echo-steps { grid-template-columns: 1fr; }
+    }
+    .echo-step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75em;
+    }
+    .echo-chat {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .echo-bubble {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .echo-bubble.ai {
+      align-self: flex-start;
+      background: rgba(255,255,255,0.05);
+      border-bottom-left-radius: 4px;
+    }
+    .echo-bubble.customer {
+      align-self: flex-end;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+    .echo-task-card {
+      max-width: 480px;
+      margin: 1.5rem auto 0 auto;
+      background: rgba(79, 70, 229, 0.08);
+      border: 1px solid rgba(79, 70, 229, 0.3);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+    .echo-task-card .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.15);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-bottom: 0.5em;
+    }
+    .echo-pricing-card {
+      max-width: 420px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .echo-price {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0.25em 0;
+    }
+    .echo-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .echo-trial-tag {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 0.5em;
+    }
+    .echo-feature-list {
+      list-style: none;
+      text-align: left;
+      margin: 1.5em 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+      color: var(--muted);
+    }
+    .echo-feature-list li::before {
+      content: "✓";
+      color: var(--secondary);
+      font-weight: 700;
+      margin-right: 0.6em;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/">
+        <img src="assets/canvalogo.png" srcset="assets/canvalogo.png 1x, assets/canvalogo@2x.png 2x" sizes="(max-width: 720px) 56px, 72px" alt="YALI IT logo" class="logo-img logo-img--large">
+      </a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="services">Services</a>
+        <a href="echo">Echo</a>
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
+        <a href="portal" class="nav-login">Client Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="echo-badge">New from YALI IT</span>
+        <h1>Hear what your customers really think, without a single form.</h1>
+        <p>Echo is a conversational AI survey built for small businesses. Customers chat with it like a real person, and anything that needs your attention automatically becomes a task for your team.</p>
+        <div class="cta-row">
+          <a href="https://echo.yaliit.com/signup" class="btn">Start your free trial</a>
+          <a href="#how-it-works" class="btn btn-outline">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="how-it-works">
+      <h2 style="text-align:center;font-size:2rem;font-weight:800;margin-bottom:0.3em;letter-spacing:-0.5px;">How it works</h2>
+      <p style="text-align:center;max-width:620px;margin:0 auto 2.5em auto;color:var(--muted);">No forms, no spreadsheets. Just a conversation, and a to-do list when it matters.</p>
+
+      <div class="echo-steps">
+        <div class="card">
+          <div class="echo-step-num">1</div>
+          <h3>Create a survey in a sentence</h3>
+          <p>Describe what you want to learn. Echo's AI drafts the questions, tone, and invite email for you. Edit anything, or just go.</p>
+        </div>
+        <div class="card">
+          <div class="echo-step-num">2</div>
+          <h3>Customers have a real chat</h3>
+          <p>Send a link, a QR code, or an email. Customers answer naturally, and Echo asks smart follow-ups based on what they actually say, not a fixed script.</p>
+        </div>
+        <div class="card">
+          <div class="echo-step-num">3</div>
+          <h3>You get tasks, not raw data</h3>
+          <p>Anything that needs a human, like a complaint or a question Echo couldn't answer, turns into a task with context and a suggested next step. Nothing falls through the cracks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top:1rem;">
+      <h2 style="text-align:center;font-size:2rem;font-weight:800;margin-bottom:1.5em;letter-spacing:-0.5px;">A real example</h2>
+
+      <div class="echo-chat">
+        <div class="echo-bubble ai">Hey! Thanks for stopping by today, got 2 minutes to tell me how it went?</div>
+        <div class="echo-bubble customer">Honestly the food was great but we waited almost 40 min and they brought the wrong order</div>
+        <div class="echo-bubble ai">Oh no, I'm sorry to hear that. That's frustrating, especially after a long wait. Did anyone catch the mix-up, or did you just go with it?</div>
+        <div class="echo-bubble customer">Nobody caught it, we just ate it since we were starving</div>
+      </div>
+
+      <div class="echo-task-card">
+        <span class="tag">TASK CREATED: HIGH PRIORITY</span>
+        <p style="font-weight:700;margin-bottom:0.4em;">Order Error &amp; Long Wait Follow-Up</p>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.6em;">Customer waited ~40 min and received the wrong order, which wasn't caught by staff. They ate it rather than complain.</p>
+        <p style="font-size:0.9rem;"><strong>Suggested action:</strong> Reach out to apologize, offer a gesture of goodwill, and review order-verification before food leaves the kitchen.</p>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top:2rem;">
+      <h2 style="text-align:center;font-size:2rem;font-weight:800;margin-bottom:1.5em;letter-spacing:-0.5px;">Simple pricing</h2>
+
+      <div class="echo-pricing-card">
+        <span class="echo-trial-tag">7 days free, then $99/month</span>
+        <p class="echo-price">$99<span>/month</span></p>
+        <ul class="echo-feature-list">
+          <li>Unlimited surveys &amp; conversations</li>
+          <li>AI-generated follow-up tasks</li>
+          <li>CSV import &amp; branded email invites</li>
+          <li>QR codes for in-person feedback</li>
+          <li>Custom branding</li>
+        </ul>
+        <a href="https://echo.yaliit.com/signup" class="btn" style="width:100%;">Start your free trial</a>
+        <p style="color:var(--muted);font-size:0.8rem;margin-top:1em;">Card required to start. Cancel anytime before day 7 and you won't be charged.</p>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <div class="container">
+        <h2>Ready to hear what your customers really think?</h2>
+        <p>Set up your first survey in minutes. No credit card expertise required, just a sentence.</p>
+        <a href="https://echo.yaliit.com/signup" class="btn">Start your free trial</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 YALI — Managed IT & Cybersecurity</p>
+      <nav class="footer-nav">
+        <a href="privacy">Privacy</a>
+        <a href="terms">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
